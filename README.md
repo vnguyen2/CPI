@@ -1,0 +1,2 @@
+# CPI
+Static frontend
