@@ -1,0 +1,23 @@
+{
+  "name": "cada",
+  "version": "1.0.0",
+  "description": "remake",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vnguyen2/CPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vnguyen2/CPI/issues"
+  },
+  "homepage": "https://github.com/vnguyen2/CPI#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2"
+  }
+}
