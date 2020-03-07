@@ -1,37 +1,136 @@
-<HTML>
 
-    <HEAD>
-    
-    <TITLE>Your Title Here</TITLE>
-    
-    </HEAD>
-    
-    <BODY BGCOLOR="FFFFFF">
-    
-    <CENTER><IMG SRC="clouds.jpg" ALIGN="BOTTOM"> </CENTER>
-    
-    <HR>
-    
-    <a href="http://somegreatsite.com">Link Name</a>
-    
-    is a link to another nifty site
-    
-    <H1>This is a Header</H1>
-    
-    <H2>This is a Medium Headerssssssszzzzwwwwsss</H2>
-    
-    Send me mail at <a href="mailto:support@yourcompany.com">
-    
-    support@yourcompany.com</a>.
-    
-    <P> This is a new paragraph!
-    
-    <P> <B>This is a new paragraph!</B>
-    
-    <BR> <B><I>This is a new sentence without a paragraph break, in bold italics.</I></B>
-    
-    <HR>
-    
-    </BODY>
-    
-    </HTML>
+<!doctype html>
+<html>
+  <head>
+
+    <title>Cada Passo Importa</title>
+    <meta name="title" content="Cada Passo Importa">
+    <meta name="description" content="Leia a revista digital e conheça mais sobre o Edu, o novo amiguinho da Turma da Mônica, e a Distrofia Muscular de Duchene (DMD)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <link href="./app/css/main.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div id="page">
+      <header class="header">
+        <div class="header_container">
+          <div class="header_container-inner">
+            <div class="header_content">
+              <div class="header_logo"><a href="./"><img src="/images/logo.svg" alt="o logotipo para cada passo importa"></a></div>
+              <div class="header_copy"><h1>Leia a revista digital e conheça mais sobre o Edu, o novo amiguinho da Turma da Mônica, e a Distrofia Muscular de Duchene (DMD)</h1></div>
+            </div>
+           </div>
+        </div>
+      </header>
+      <main>
+        <section id="magazines" class="magazines">
+          <div class="magazines__container">
+            <div class="magazines__list">
+              <div class="magazines__note js-note">Faça o “download” de passatempos divertidos!</div>
+              <article>
+                <div class="magazines__viewer">
+                  <img src="/images/1.png" alt="imagem de capa do volume 1">
+                  <button type="button" aria-label="Leia a revistinha 1" class="js-magazine" data-magazine="1"><img src="./app/images/view.svg" alt="">Read Volume 1</button>
+                </div>
+                <a href="/images/1.pdf" target="_blank" class="magazines__download-link">Download pdf</a>
+              </article>
+              <article>
+                <div class="magazines__viewer">
+                  <img src="/images/2.png" alt="imagem de capa do volume 2">
+                  <button type="button" aria-label="Leia a revistinha 2" class="js-magazine" data-magazine="2"><img src="./app/images/view.svg" alt="">Read Volume 2</button>
+                </div>
+                <a href="/images/2.pdf" target="_blank" class="magazines__download-link">Download pdf</a>
+              </article>
+              <article>
+                <div class="magazines__viewer">
+                  <img src="/images/3.png" alt="imagem de capa do volume 3">
+                  <button type="button" aria-label="Leia a revistinha 3" class="js-magazine" data-magazine="3"><img src="./app/images/view.svg" alt="">Read Volume 3</button>
+                </div>
+                <a href="/images/3.pdf" target="_blank" class="magazines__download-link">Download pdf</a>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section id="details" class="details">
+          <div class="details__container">
+            <div class="details_image">
+              <img src="/images/edu.jpg" alt="personagen de Mauricio de Sousa posando com letreiro de cada passo importa">
+            </div>
+            <div class="details__text">
+              <p>A Sarepta Farmacêutica fez uma parceria com o premiado artista Mauricio de Sousa para criar o projeto Cada Passo Importa e o personagem Edu, um garoto que tem Distrofia Muscular de Duchenne. A história do Edu mostra os desafios enfrentados pelas crianças com DMD e a importância da inclusão.</p>
+              <p>Cada revistinha tem uma história e passatempos que facilitam a compreensão e nos inspiram a olhar além das diferenças físicas.</p>
+              <p><a href="https://sarepta.formstack.com/forms/cado_passo_importa" class="js-register-link">Cadastre-se</a> para receber informações sobre novos lançamentos.</p>
+              <p>Assista a <a href="https://www.youtube.com/channel/UC1AcQiZeaS5k9gZu0l3MZiA" class="js-external-link">este vídeo</a> no nosso canal no Youtube para ver os bastidores do lançamento da primeira revistinha.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__logo"><img src="/images/sarepta-logo.svg" alt="o logotipo da Sarepta Farmacêutica"></div>
+          <div class="footer__copy">
+            <div class="footer__copy-left">
+              <div class="footer__warning">Este site é destinado apenas ao público brasileiro.</div>
+              <div class="footer__legalese">
+                <p>©<span class="js-year">2019</span> Sarepta Therapeutics, Inc. 215 First Street, Cambridge, MA 02142. Todos os direitos reservados.
+                <p>12/16 C-NP-US-0047</p>
+                <p>Sarepta, Sarepta Therapeutics e o logotipo Sarepta são marcas registradas da Sarepta Therapeutics, Inc.</p>
+                <p>Turma de Mônica é uma marca registrada da Mauricio de Sousa Produções</p>
+              </div>
+            </div>
+            <div class="footer__copy-right">
+              <p>Apoio Sarepta Therapeutics</p>
+              <p><a href="https://www.sareptafarmaceutica.com.br/pt" class="js-network-link">www.sareptafarmaceutica.com.br</a></p>
+              <div class="footer__terms"><a href="./termos">Termos de Uso</a></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="cpi-modal-bg js-modal-bg"></div>
+    <div class="cpi-modal js-register-form js-modal">
+      <div class="cpi-modal__container">
+        <div class="cpi-modal__close js-close-modal">✖</div>
+        <script src="https://sarepta.formstack.com/forms/js.php/cado_passo_importa"></script>
+      </div>
+    </div>
+    <div class="cpi-modal js-network-modal js-modal">
+      <div class="cpi-modal__container">
+        <div class="cpi-modal__close js-close-modal">✖</div>
+        <div class="cpi-modal__box">
+          <p>Você agora está saindo para consultar outro site da Sarepta Therapeutics.</p>
+          <div class="cpi-modal__options">
+            <button class="cpi-modal__option cpi-modal__option--secondary js-close-modal">Cancelar</button> <button class="cpi-modal__option cpi-modal__option--primary js-accept-modal">Tudo bem</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cpi-modal js-external-modal js-modal">
+      <div class="cpi-modal__container">
+        <div class="cpi-modal__close js-close-modal">✖</div>
+        <div class="cpi-modal__box">
+          <p>O site que você está prestes a visitar é mantido por outra organização que tem responsabilidade exclusiva por seu conteúdo. Como nós não podemos controlar o conteúdo ou práticas de privacidade de nenhum site de terceiros, incentivamos que você leia a política de privacidade de cada site que visitar.</p>
+          <div class="cpi-modal__options">
+            <button class="cpi-modal__option cpi-modal__option--secondary js-close-modal">Cancelar</button> <button class="cpi-modal__option cpi-modal__option--primary js-accept-modal">Tudo bem</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cpi-modal js-thanks-modal js-modal">
+      <div class="cpi-modal__container">
+        <div class="cpi-modal__close js-close-modal">✖</div>
+        <div class="cpi-modal__box">
+          <div class="cpi-modal__headline">Obrigado por entrar em contato conosco</div>
+          <p>Responderemos a sua mensagem assim que possível.</p>
+          <div class="cpi-modal__options">
+            <button class="cpi-modal__option cpi-modal__option--primary js-close-modal">Tudo bem</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/app/js/modal.js"></script>
+  </body>
+</html>
