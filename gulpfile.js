@@ -34,7 +34,7 @@ function style(){
 function watchFiles(done){
     gulp.watch(cssSrc, style);
     gulp.watch(imgSrc);
-    gulp.watch('/app/**/*', gulp.series(browsersync.reload));
+    gulp.watch('/app/*.html', gulp.series(browsersync.reload));
     done();
 }
 
