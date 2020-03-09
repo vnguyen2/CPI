@@ -5,7 +5,7 @@ const sass = require('gulp-sass');
 const del = require('del');
 
 const imgSrc = 'app/images/*.*',
-      cssSrc = 'app/scss/*.scss',
+      cssSrc = 'app/scss/*.scss';
 
 
 function browserSync(done) {
