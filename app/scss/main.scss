@@ -292,17 +292,23 @@ body {
     @include swMin(Csize) {
         width: calc(100% - 64px);
         margin-left: 32px;
+        display: flex;
     }
 
     @include swMin(Dsize) {
         width: calc(75% -56px);
         margin-left: 32px;
+        display: flex;
     }
 
     > article {
         @media(max-width: 719px) {
             max-width: 320px;
             margin: 0 auto 40px;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
 
         @include swMin(Bsize) {
@@ -370,7 +376,6 @@ body {
             color: #FFFFFF;
             background: #F15F2E;
             overflow: visible;
-            appearance: none;
             border: none;
             outline: none;
             cursor: pointer;
@@ -387,11 +392,20 @@ body {
                 background: #D84717;
             }
 
+            > img {
+                display: none;
+            }
+
             @include swMin(Csize) {
                 font-size: 14px;
                 line-height: 26px;
                 margin: 0 16px;
                 width: calc(100% - 32px);
+
+                > img {
+                    display: initial;
+                    margin-right: 7px;
+                }
             }
 
         }
@@ -406,4 +420,100 @@ body {
     letter-spacing: 0.78px;
     text-transform: uppercase;
     color: #011931;
+}
+
+.details {
+    margin-bottom: 40px;
+
+    @include swMin(Bsize) {
+        margin-bottom: 56px;
+    }
+
+    @include swMin(Csize) {
+        margin-bottom: 96px;
+    }
+}
+
+.details_container {
+    width: 100%;
+    max-width: 1216px;
+    margin: 0 auto;
+
+    &:after {
+        clear: both;
+        content:'';
+        display: block;
+    }
+}
+
+.details_image {
+    width: calc(100% - 32px);
+    float: left;
+    margin-left: 16px;
+
+    @include swMin(Bsize) {
+        width: calc(75% - 56px);
+        margin-left: 32px;
+    }
+
+    @include swMin(Csize) {
+        width: calc(40% - 45px);
+        margin-left: 32px;
+    }
+
+    @include swMin(Dsize) {
+        width: calc(33% - 42px);
+        margin-left: 32px;
+    }
+
+    > img {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 32px;
+        border: solid 4px #011931;
+
+        @include swMin(Cize) {
+            max-width: 384px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.details_text {
+    width: calc(100% - 32px);
+    margin-left: 16px;
+    float: left;
+
+    p {
+        font: normal 18px/34px 'Muli', sans-serif;
+    }
+
+    a {
+        font: bold 'Muli', sans-serif;
+        color: #F15F2E;
+
+        &:hover {
+            color: #D84717;
+        }
+    }
+
+    > * + * {
+        margin-top: 15px;
+    }
+
+    @include swMin(Bsize) {
+        width: calc(75% - 56px);
+        margin-left: 32px;
+    }
+
+    @include swMin(Csize) {
+        width: calc(58% - 50px);
+        margin-left: 32px;
+    }
+
+    @include swMin(Dsize) {
+        width: calc(50% - 48px);
+        margin-left: 32px;
+    }
+
 }
