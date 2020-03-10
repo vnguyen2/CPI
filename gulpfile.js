@@ -1,14 +1,17 @@
 
 const gulp = require('gulp'); 
-const browsersync = require("browser-sync").create();
-const sass = require('gulp-sass');
+const browserSync = require("browser-sync").create();
 const del = require('del');
+const sass = require('gulp-sass'),
+      postcss = require('gulp-postcss'),
+      autoprefixer = require('autoprefixer'),
+      sourcemaps = require('gulp-sourcemaps'),
+      cssnano = require ('cssnano');
 
-const imgSrc = 'app/images/*.*',
-      cssSrc = 'app/scss/*.scss';
+const cssSrc = 'app/scss/*.scss';
 
 
-function browserSync(done) {
+/* function browserSync(done) {
     browsersync.init({
         server: {
             baseDir:'./app'
@@ -16,36 +19,42 @@ function browserSync(done) {
         port:3000
     });
     done();
-}
+} */
 
-function browserSyncReload(done){
-    browsersync.reload();
+function reload(done) {
+    browserSync.reload();
     done();
 }
     
-function style(){
+function style() {
     return gulp
         .src(cssSrc)
-        .pipe(sass())
+        .pipe(sourcemaps.init())
+        .pipe(sass()).on('error', sass.logError)
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('app/css'))
-        .pipe(browsersync.stream());
+        .pipe(browserSync.stream());
 }
 
-function watchFiles(done){
+function watch(done) {
+    browserSync.init({
+        server: {
+            baseDir: "./app"
+        },
+        port:3000
+    });
     gulp.watch(cssSrc, style);
-    gulp.watch(imgSrc);
-    gulp.watch('/app/*.html', gulp.series(browsersync.reload));
+    gulp.watch('app/*.html', reload);
     done();
 }
 
-
 function clean(){
-    return del(['css/**']);   
+    return del(['css/*.*']);   
 }
 
-
-const build = gulp.series(clean, gulp.parallel(style, watchFiles, browserSync));
-
+const build = gulp.series(clean, gulp.parallel(style, watch));
 
 exports.style = style;
+exports.watch = watch;
 exports.default = build;
