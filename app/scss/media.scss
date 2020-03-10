@@ -1,0 +1,11 @@
+@mixin swMin($size) {
+    @if $size == Bsize {
+        @media (min-width: 720px) { @content; }
+    }
+    @else if $size == Csize {
+        @media (min-width: 1024px) { @content; }
+    }
+    @else if $size == Dsize {
+        @media (min-width: 1280px) { @content; }
+    }
+}
