@@ -10,17 +10,6 @@ const sass = require('gulp-sass'),
 
 const cssSrc = 'app/scss/*.scss';
 
-
-/* function browserSync(done) {
-    browsersync.init({
-        server: {
-            baseDir:'./app'
-        },
-        port:3000
-    });
-    done();
-} */
-
 function reload(done) {
     browserSync.reload();
     done();
@@ -45,16 +34,17 @@ function watch(done) {
         port:3000
     });
     gulp.watch(cssSrc, style);
-    gulp.watch('app/*.html', reload);
+    gulp.watch('./app/*.html', reload);
     done();
 }
 
 function clean(){
-    return del(['css/*.*']);   
+    return del(['app/css/**', '!public']);   
 }
 
 const build = gulp.series(clean, gulp.parallel(style, watch));
 
+exports.clean = clean;
 exports.style = style;
 exports.watch = watch;
 exports.default = build;
