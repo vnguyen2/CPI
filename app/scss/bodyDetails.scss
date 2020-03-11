@@ -62,6 +62,7 @@
     a {
         font: bold 'Muli', sans-serif;
         color: #F15F2E;
+        text-decoration: none;
 
         &:hover {
             color: #D84717;
@@ -84,5 +85,68 @@
 
     @include swMin(Dsize) {
         width: 591px;
+    }
+}
+
+.educators_container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+    width: 287px;
+    height: 153px;
+    border: solid 4px rgba(1, 25, 49, 0.1);
+
+    @include swMin(Bsize) {
+        margin-top: 58px;
+        width: 495px;
+        height: 102px;
+    }
+
+    @include swMin(Csize) {
+        margin-top: 53px;
+        width: 528px;
+    }
+
+    @include swMin(Dsize) {
+        margin-top: 50px;
+        width: 591px;
+    }
+}
+
+.educators {
+    margin-top: -12px;
+    margin-left: 21px;
+    width: 84px;
+    font: normal 20px/25px 'Bangers', sans-serif;
+    color: #011931;
+    
+    @include swMin(Csize) {
+        margin-left: 25px;
+    }
+}
+
+.educators_text {
+    width: 246px;
+    margin: 0 auto;
+    padding-top: 12px; 
+
+    > p {
+        font: normal 14px/26px 'Muli', sans-serif;
+        color: #373D40;
+        letter-spacing: 1.86;
+    }
+
+    @include swMin(Bsize) {
+        width: 454px;
+        height: 52px;
+    }
+
+    @include swMin(Csize) {
+        margin-left: 25px;
+        width: 483px;
+    }
+
+    @include swMin(Dsize) {
+        width: 542px;
     }
 }
