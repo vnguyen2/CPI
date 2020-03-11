@@ -1,62 +1,39 @@
 @import 'media';
 
-
 .footer {
     background-color: #011931;
-    padding: 88px 0;
+    padding-bottom: 88px;
 }
 
 .footer_container {
     width: 100%;
-    max-width: 1216px;
-    margin: 0 auto;
-
-    &:after {
-        clear: both;
-        content:'';
-        display: block;
-    }
-
-    &:after {
-        clear: both;
-        content: "";
-        display:block;
-    }
+    max-width: 1280px;
+    padding-top: 88px;
 }
 
 .footer_logo {
-    width: calc(100% - 32px);
-    margin-left: 32px;
-    float: left;
+    margin-bottom: 48px;
     display: flex;
     justify-content: center;
-    margin-bottom: 48px;
 
-    @include swMin(Bsize) {
-        width: calc(100% - 64px);
-        margin-left: 32px;
+    > img {
+        width: 176px;
     }
 
     @include swMin(Csize) {
+        width: 100%;
         justify-content: flex-start;
+        margin-left: 32px;
         margin-bottom: 64px;
     }
 }
 
 .footer_area {
-    width: calc(100% - 32px);
-    float: left;
-    margin-left: 16px;
-    font: normal 14px/26px 'Muli', sans-serif;
+    width: 100%;
+    font: normal 14px/22px 'Muli', sans-serif;
     text-align: center;
     display: flex;
     flex-direction: column;
-
-    @include swMin(Bsize) {
-        width: calc(100% - 64px);
-        float: left;
-        margin-left: 32px;
-    }
 
     @include swMin(Csize) {
         align-items: flex-end;
@@ -66,21 +43,41 @@
 }
 
 .footer_area-left {
-    margin-right: 100px;
+    order: 1;
+    width: 280px;
+    margin: 0 auto;
+
+    @include swMin(Bsize) {
+        width: 664px;
+    }
+
+    @include swMin(Csize) {
+        order: 0;
+        margin-left: 32px;
+        width: 624px;
+    }
+
+    @include swMin(Dsize) {
+        width: 790px;
+    }
 }
 
 .footer_area-right {
+    order: 0;
     color: #FFFFFF;
+    line-height: 20px;
     margin-bottom: 24px;
 
     a {
         color: #FFFFFF;
         font-weight: bold;
+        text-decoration: none;
     }
 
     @include swMin(Csize) {
+        order: 1;
         text-align: right;
-        margin-left: 16px;
+        margin-right: 32px;
         margin-bottom: 0;
     }
 }
@@ -92,5 +89,9 @@
 
 .footer_legal {
     color: #FFFFFF;
+}
+
+.footer_terms {
+    margin-top: 20px;
 }
 

@@ -1,5 +1,56 @@
 @import 'media';
 
+.magazine {
+    margin-top: -300px;
+    position: relative;
+    z-index: 4;
+
+    @include swMin(Bsize) {
+        margin-top: -80px;
+    }
+
+    @include swMin(Csize) {
+        margin-top: -81px;
+    }
+
+    @include swMin(Dsize) {
+        margin-top: -67px;
+    }
+}
+
+.magazine_container {
+    max-width: 288px;
+    margin: 0 auto;
+    
+    @include swMin(Bsize) {
+        max-width: 672px;
+        display: flex;
+    }
+
+    @include swMin(Csize) {
+        max-width: 928px;
+    }
+
+    @include swMin(Dsize) {
+        max-width: 950px;
+    }
+
+    > article {
+
+        @media(max-width: 719px) {
+            max-width: 320px;
+            margin: 0 auto 40px;
+        }
+
+        @include swMin(Bsize) {
+            margin-right: 32px; 
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
 
 .magazine_note {
     font: 400 25px/30px 'Bangers', cursive;
@@ -7,8 +58,9 @@
     color: #011931;
     position: absolute;
     bottom: calc(100% + 10px);
-    right: 0;
+    left: 47%;
     padding-right: 52px;
+    z-index: 5;
 
     &:after {
         background: url("/images/arrow.svg") no-repeat;
@@ -17,9 +69,7 @@
         height: 35px;
         position: absolute;
         transform: rotate(90deg);
-        top: -1px;
         right: 10px;
-        z-index: 1;
     }
 
     @media(max-width: 719px) {
@@ -27,15 +77,9 @@
     }
 
     @include swMin(Csize) {
-        bottom: 115px;
-        left: 0px;
-        padding-bottom: 7px;
-        transform: rotate(270deg);
-        transform-origin: left bottom 0;
-
-        &:after {
-            left: 335px;
-        }
+        transform-origin: left bottom;
+        transform: translate(-120%, 1420%) rotate(270deg);
+        
     }
 }
 
@@ -58,19 +102,13 @@
             overflow: visible;
             border: none;
             outline: none;
-            cursor: pointer;
-            padding: 0;
-            position: static;
-            border-radius: 32px;
+            cursor: pointer;    
+            border-radius: 27px;
             height: 52px;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-
-            &.hover {
-                background: #D84717;
-            }
 
             > img {
                 display: none;
@@ -80,14 +118,13 @@
                 font-size: 14px;
                 line-height: 26px;
                 margin: 0 16px;
-                width: calc(100% - 32px);
+                width: 240px;
 
                 > img {
                     display: initial;
                     margin-right: 7px;
                 }
             }
-
         }
     }   
 }

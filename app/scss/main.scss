@@ -11,13 +11,12 @@
     vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+article, details, footer, header, main, section {
 	display: block;
 }
 *[hidden] {
 	display: none;
 }
-
 
 #page {
     display:flex;
@@ -39,7 +38,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     }
 }
 
-
 body {
     font: normal 18px/34px 'Muli', sans-serif;
     min-height: 100vh;
@@ -49,96 +47,10 @@ body {
   
     &.noscroll {
       overflow: hidden;
-      height: 100vh;
-      width: 100vw;
     }
 }
 
-//magazine -> magazine_container -> magazine_list
-.magazine {
-    margin: -270px 16px 40px;
-    position: relative;
-    z-index: 5;
 
-    @include swMin(Bsize) {
-        margin: -80px 32px 104px;
-    }
-
-    @include swMin(Csize) {
-        margin: -48px 32px 112px;
-    }
-
-    @include swMin(Dsize) {
-        margin: -64px 32px 120px;
-    }
-
-    &_container {
-        max-width: 530;
-        margin: 0 auto;
-
-        &.after {
-            clear:both;
-            content:'';
-            display:block;
-        }
-        
-        @include swMin(Bsize) {
-            max-width: 672px;
-        }
-
-        @include swMin(Csize) {
-            max-width: 928px;
-        }
-
-        @include swMin(Dsize) {
-            max-width: 1216px;
-        }
-    }
-
-    &_list {
-        width: calc(100% - 32px);
-        float: left;
-        margin-left: 16px;
-        position: relative;
-
-        @include swMin(Bsize) {
-            width: calc(100% - 64px);
-            margin-left: 32px;
-            display: flex;
-        }
-
-        @include swMin(Csize) {
-            width: calc(100% - 64px);
-            margin-left: 32px;
-            display: flex;
-        }
-
-        @include swMin(Dsize) {
-            width: calc(75% -56px);
-            margin-left: 32px;
-            display: flex;
-        }
-
-        > article {
-            @media(max-width: 719px) {
-                max-width: 320px;
-                margin: 0 auto 40px;
-                
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-
-            @include swMin(Bsize) {
-                margin-right: 32px;
-
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-        }
-    }
-}
 
 
 
